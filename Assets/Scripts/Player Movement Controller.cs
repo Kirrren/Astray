@@ -6,7 +6,6 @@ public class PlayerMovementController : MonoBehaviour
     public Transform playerTransform;
     public Rigidbody playerRB;
     public InputManager inputs;
-    public Animator playerAnim;
 
     [Header("Camera Components")]
     public Transform cameraTransform;
@@ -24,7 +23,6 @@ public class PlayerMovementController : MonoBehaviour
         playerRB = GetComponent<Rigidbody>();
         inputs = GetComponent<InputManager>();
         playerTransform = GetComponent<Transform>();
-        playerAnim = GetComponent<Animator>();
 
         playerRB.constraints = RigidbodyConstraints.FreezeRotation;
     }
@@ -33,7 +31,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         CheckPlayerStatus();
         Vector3 moveDirection = inputs.GetMovementInput();
-        SetPlayerAnimation();
         SetPlayerOrientation(moveDirection);
         MovePlayer(moveDirection);
     }
@@ -46,18 +43,6 @@ public class PlayerMovementController : MonoBehaviour
         playerTransform.forward = moveOrientation.magnitude > 0 ? moveOrientation : playerTransform.forward;   
     }
 
-    void SetPlayerAnimation()
-    {
-        if (playerMoving)
-        {
-            playerAnim.Play("Walking");
-        }
-        else
-        {
-            playerAnim.Play("Standing");
-        }
-    }
-
     public void MovePlayer(Vector3 moveDir)
     {
         Vector3 moveForce = (moveDir.z * playerOrientation.forward + moveDir.x * playerOrientation.right).normalized * playerSpd;
@@ -66,6 +51,6 @@ public class PlayerMovementController : MonoBehaviour
 
     public void CheckPlayerStatus()
     {
-        playerMoving = playerRB.linearVelocity.magnitude > 3f;
+        playerMoving = playerRB.linearVelocity.magnitude > 3.5f;
     }
 }
