@@ -14,6 +14,10 @@ public class PlayerMovementController : MonoBehaviour
 
     public Transform playerOrientation;
 
+    [Header("Physics")]
+    public bool playerOnGround;
+    public bool playerMoving;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -25,20 +29,28 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
-        setPlayerOrientation();
+        CheckPlayerStatus();
         Vector3 moveDirection = inputs.GetMovementInput();
+        SetPlayerOrientation(moveDirection);
         MovePlayer(moveDirection);
     }
 
-    void setPlayerOrientation()
+    void SetPlayerOrientation(Vector3 moveDir)
     {
         Vector3 rotationValues = playerTransform.position - new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
+        Vector3 moveOrientation = new Vector3(playerRB.linearVelocity.normalized.x, 0, playerRB.linearVelocity.normalized.z);
         playerOrientation.forward = rotationValues.normalized;
+        playerTransform.forward = moveOrientation.magnitude > 0 ? moveOrientation : playerTransform.forward;   
     }
 
     public void MovePlayer(Vector3 moveDir)
     {
         Vector3 moveForce = (moveDir.z * playerOrientation.forward + moveDir.x * playerOrientation.right).normalized * playerSpd;
         playerRB.AddForce(moveForce, ForceMode.Force);
+    }
+
+    public void CheckPlayerStatus()
+    {
+        playerMoving = playerRB.linearVelocity.magnitude > 3.5f;
     }
 }
