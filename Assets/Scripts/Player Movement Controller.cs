@@ -12,6 +12,8 @@ public class PlayerMovementController : MonoBehaviour
 
     public float playerSpd;
 
+    public Transform playerOrientation;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
@@ -23,13 +25,21 @@ public class PlayerMovementController : MonoBehaviour
 
     void Update()
     {
+        setPlayerOrientation();
         Vector3 moveDirection = inputs.GetMovementInput();
         MovePlayer(moveDirection);
     }
 
+    void setPlayerOrientation()
+    {
+        Vector3 rotationValues = playerTransform.position - new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
+        playerOrientation.forward = rotationValues.normalized;
+        Debug.Log(rotationValues + " " + playerOrientation.rotation);
+    }
+
     public void MovePlayer(Vector3 moveDir)
     {
-        Vector3 moveForce = (moveDir.x * cameraTransform.right + moveDir.z * cameraTransform.forward).normalized * playerSpd;
+        Vector3 moveForce = (moveDir.z * playerOrientation.forward + moveDir.x * playerOrientation.right).normalized * playerSpd;
         playerRB.AddForce(moveForce, ForceMode.Force);
     }
 }

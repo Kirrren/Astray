@@ -13,6 +13,9 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         inputs = GameObject.FindGameObjectWithTag("Player").GetComponent<InputManager>();
         targetTransform = GetComponent<Transform>();
     }
