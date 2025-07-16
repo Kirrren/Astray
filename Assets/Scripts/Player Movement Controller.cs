@@ -34,7 +34,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         Vector3 rotationValues = playerTransform.position - new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
         playerOrientation.forward = rotationValues.normalized;
-        Debug.Log(rotationValues + " " + playerOrientation.rotation);
     }
 
     public void MovePlayer(Vector3 moveDir)
