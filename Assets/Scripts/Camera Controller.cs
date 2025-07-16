@@ -27,8 +27,8 @@ public class CameraController : MonoBehaviour
     void RotateCam(Quaternion targetRotation)
     {
         targetY += targetRotation.eulerAngles.y * XLookSensitivity;
-        targetX += targetRotation.eulerAngles.x * YLookSensitivity;
-        Debug.Log(targetX);
+        //TODO: fix the x looking to prevent the camera from increasing straight to 90 (just try fixing it)
+        targetX += 0f; //targetRotation.eulerAngles.x * YLookSensitivity;
         targetX = Mathf.Clamp(targetX, -90f, 90f);
         transform.rotation = Quaternion.Euler(targetX, targetY, 0f);
     }
