@@ -11,6 +11,7 @@ public class PlayerMovementController : MonoBehaviour
     public Transform cameraTransform;
 
     public float playerSpd;
+    public float playerMinSpdThreshold;
 
     public Transform playerOrientation;
 
@@ -51,6 +52,6 @@ public class PlayerMovementController : MonoBehaviour
 
     public void CheckPlayerStatus()
     {
-        playerMoving = playerRB.linearVelocity.magnitude > 3.5f;
+        playerMoving = playerRB.linearVelocity.magnitude > playerMinSpdThreshold;
     }
 }

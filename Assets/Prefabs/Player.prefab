@@ -3351,6 +3351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2536b4d44195acd4bab5a6b7d75e63b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interact: 101
 --- !u!114 &9168289190481737165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3368,6 +3369,7 @@ MonoBehaviour:
   inputs: {fileID: 7576728127868254982}
   cameraTransform: {fileID: 7957757151847380215}
   playerSpd: 70
+  playerMinSpdThreshold: 2.5
   playerOrientation: {fileID: 7980036289524021903}
   playerOnGround: 0
   playerMoving: 0
@@ -4608,6 +4610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 7526179939819569709}
+  walkAnimation: Walking2
+  idleAnimation: Standing
 --- !u!1 &5570699276865471133
 GameObject:
   m_ObjectHideFlags: 0

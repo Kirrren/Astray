@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerAnimationManager : MonoBehaviour
 {
     public Animator anim;
+    public string walkAnimation;
+    public string idleAnimation;
 
     PlayerMovementController player;
 
@@ -21,11 +23,11 @@ public class PlayerAnimationManager : MonoBehaviour
     {
         if (isMoving)
         {
-            anim.Play("catwalk_loop_251070");
+            anim.Play(walkAnimation);
         }
         else
         {
-            anim.Play("Standing");
+            anim.Play(idleAnimation);
         }
     }
 }
