@@ -21,6 +21,9 @@ public class PlayerMovementController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         playerRB = GetComponent<Rigidbody>();
         inputs = GetComponent<InputManager>();
         playerTransform = GetComponent<Transform>();
