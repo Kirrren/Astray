@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    public KeyCode interact = KeyCode.E;
+
     public Quaternion GetMouseInput()
     {
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime;
