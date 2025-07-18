@@ -21,7 +21,6 @@ public class PlayerAnimationManager : MonoBehaviour
     
     void SetPlayerAnimation(bool isMoving)
     {
-        Debug.Log(player.playerRB.linearVelocity.magnitude);
         if (isMoving && player.playerRB.linearVelocity.magnitude < 8)
         {
             anim.Play(walkAnimation);
