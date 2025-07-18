@@ -178,7 +178,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 268876216}
+    m_TransformParent: {fileID: 282429463}
     m_Modifications:
     - target: {fileID: 100000, guid: d21bbdbe4ec1d1249b99d1b8178533fa, type: 3}
       propertyPath: m_Name
@@ -186,15 +186,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d21bbdbe4ec1d1249b99d1b8178533fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.223
+      value: 1.9565816
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d21bbdbe4ec1d1249b99d1b8178533fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8933544
+      value: 0.09664559
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d21bbdbe4ec1d1249b99d1b8178533fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.0820007
+      value: -0.2923813
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d21bbdbe4ec1d1249b99d1b8178533fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -673,7 +673,6 @@ Transform:
   - {fileID: 154731374}
   - {fileID: 1158272415}
   - {fileID: 263382238}
-  - {fileID: 138237452}
   - {fileID: 300659425}
   - {fileID: 1031725557}
   - {fileID: 1020750827}
@@ -945,7 +944,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5159078012444724336, guid: 93c9aaa558795ea46aae491b9bb88bbe, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 138237452}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -1728013695380148634, guid: 93c9aaa558795ea46aae491b9bb88bbe, type: 3}
       insertIndex: -1
@@ -3302,6 +3304,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -1728013695380148634, guid: a8e8841c3271a024f964655c3d08e913, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1800839032}
+    - targetCorrespondingSourceObject: {fileID: -1728013695380148634, guid: a8e8841c3271a024f964655c3d08e913, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1800839037}
   m_SourcePrefab: {fileID: -3956505258223990651, guid: a8e8841c3271a024f964655c3d08e913, type: 3}
 --- !u!1 &1800839029 stripped
 GameObject:
@@ -3360,7 +3365,7 @@ MonoBehaviour:
   virtualPlayerCam: {fileID: 1291736596}
   virtualDialogueCam: {fileID: 1538077937}
   dialogueText: Good morning Kei!                      How did you sleep?                    
-    Awww don't be like that :(             Come visit your mom from time to time!
+    Awww don't be like that :(             Come visit your mom more often!
   dialogueTextBox: {fileID: 1566787020}
   inputs: {fileID: 1291736595}
   maxCharLength: 39
@@ -3369,6 +3374,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5159078012444724336, guid: a8e8841c3271a024f964655c3d08e913, type: 3}
   m_PrefabInstance: {fileID: 1800839028}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1800839037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800839029}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6850087, y: 1.3378646, z: 0.37557727}
+  m_Center: {x: 0.0059988946, y: 0.74967813, z: 0.016616657}
 --- !u!1 &1894371280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8113378453055326198, guid: 718e6fe994a190f4da893119bdfd6427, type: 3}
