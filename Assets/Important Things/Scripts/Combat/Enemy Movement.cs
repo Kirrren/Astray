@@ -50,9 +50,9 @@ public class EnemyMovement : MonoBehaviour
 
     void EnemyStatus()
     {
-        if (enemyHP <= 0f)
+        if (enemyHP <= 0f && gameObject.name != "null")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Debug.Log("Enemy HP below zero. destroying enemy");
         }
     }
