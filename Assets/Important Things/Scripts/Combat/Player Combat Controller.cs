@@ -7,6 +7,7 @@ public class PlayerCombatController : MonoBehaviour
     public InputManager inputs;
     public PlayerMovementController player;
     public Animator playerAnim;
+    public Animator swordAnim;
     public GameObject playerSword;
 
     [Header("Base Stats")]
@@ -29,13 +30,13 @@ public class PlayerCombatController : MonoBehaviour
     {
         PlayerBasicAttack();
         PlayerDash();
-        SwingSword();
     }
 
     public void PlayerBasicAttack()
     {
         if (Input.GetMouseButtonDown(0) || playerAttacking)
         {
+            swordAnim.Play("Cyberswing");
             playerAttacking = true;
             Debug.Log("Player Attacking");
             if (playerAttackBox.triggerEntered)
@@ -54,23 +55,6 @@ public class PlayerCombatController : MonoBehaviour
             Vector3 inputDir = inputs.GetMovementInput().normalized * dashForce;
             Vector3 moveDir = player.playerTransform.forward * inputDir.x + player.playerTransform.right * inputDir.z;
             player.playerRB.AddForce(moveDir, ForceMode.Impulse);
-        }
-    }
-
-    public void SwingSword()
-    {
-        if (playerAttacking)
-        {
-            playerSword.SetActive(true);
-            Transform sword = playerSword.GetComponent<Transform>();
-            sword.rotation =  Quaternion.Euler
-            (sword.rotation.x, sword.rotation.y - 10f, sword.rotation.z);
-            if (sword.rotation.y < 0)
-            {
-                playerSword.SetActive(false);
-                sword.rotation = Quaternion.Euler(0, 180, 90);
-                playerAttacking = false;
-            }
         }
     }
 }
