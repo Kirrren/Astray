@@ -218,7 +218,7 @@ MonoBehaviour:
   player: {fileID: 0}
   enemyRb: {fileID: 6880528482721744294}
   enemyBody: {fileID: 759437882252597390}
-  enemyMoveSpd: 15
+  enemyMoveSpd: 20
   enemyAttackStr: 1
   enemyAggroed: 0
   enemyHP: 10
