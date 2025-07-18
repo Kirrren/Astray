@@ -1,4 +1,5 @@
 using UnityEngine;
+using static System.Math;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -43,8 +44,12 @@ public class PlayerMovementController : MonoBehaviour
     {
         Vector3 rotationValues = playerTransform.position - new Vector3(cameraTransform.position.x, playerTransform.position.y, cameraTransform.position.z);
         Vector3 moveOrientation = new Vector3(playerRB.linearVelocity.normalized.x, 0, playerRB.linearVelocity.normalized.z);
-        playerOrientation.forward = rotationValues.normalized;
-        playerTransform.forward = moveOrientation.magnitude > 0 ? moveOrientation : playerTransform.forward;   
+        if (Abs(inputs.GetMovementInput().magnitude) > 0)
+        {
+
+            playerOrientation.forward = rotationValues.normalized;
+            playerTransform.forward = moveOrientation.magnitude > 0 ? moveOrientation : playerTransform.forward;
+        }   
     }
 
     public void MovePlayer(Vector3 moveDir)

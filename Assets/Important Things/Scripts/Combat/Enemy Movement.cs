@@ -43,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
         if (enemyAggroed)
         {
             Vector3 moveDir = player.playerTransform.position - transform.position;
+            enemyBody.forward = moveDir.normalized;
             enemyRb.AddForce(moveDir.normalized * enemyMoveSpd);
         }
     }

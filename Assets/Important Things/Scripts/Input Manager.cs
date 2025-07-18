@@ -4,6 +4,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public KeyCode interact = KeyCode.E;
+    public KeyCode dash = KeyCode.LeftShift;
 
     public Quaternion GetMouseInput()
     {
