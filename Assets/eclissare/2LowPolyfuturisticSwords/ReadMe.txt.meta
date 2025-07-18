@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 18dc0cd2c080841dea60987a38ce93fa
-NativeFormatImporter:
+guid: d8c81332750f56144bfefaa5f8864341
+TextScriptImporter:
   externalObjects: {}
-  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -10,6 +9,6 @@ AssetOrigin:
   serializedVersion: 1
   productId: 229095
   packageName: 2 Low Poly Futuristic Swords
-  packageVersion: 
-  assetPath: Assets/Settings/UniversalRenderPipelineGlobalSettings.asset
-  uploadId: 0
+  packageVersion: 1.0.0
+  assetPath: Assets/eclissare/2LowPolyfuturisticSwords/ReadMe.txt
+  uploadId: 516971
