@@ -620,6 +620,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3828068470096251881, guid: 8f405fcc79aad6442b9dcccaca5d5d4e, type: 3}
   m_PrefabInstance: {fileID: 92405917}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &125110220 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7526179939819569709, guid: f16f9d70ed66b3d4b97a52c96e3bfd7a, type: 3}
+  m_PrefabInstance: {fileID: 1991105771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &128346802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4257,6 +4262,7 @@ MonoBehaviour:
   playerAttackBox: {fileID: 873739999}
   inputs: {fileID: 0}
   player: {fileID: 0}
+  playerAnim: {fileID: 125110220}
   playerAttackStr: 5
   playerHP: 100
   dashForce: 40

@@ -21,11 +21,12 @@ public class PlayerAnimationManager : MonoBehaviour
     
     void SetPlayerAnimation(bool isMoving)
     {
-        if (isMoving)
+        Debug.Log(player.playerRB.linearVelocity.magnitude);
+        if (isMoving && player.playerRB.linearVelocity.magnitude < 8)
         {
             anim.Play(walkAnimation);
         }
-        else
+        else if (!isMoving)
         {
             anim.Play(idleAnimation);
         }

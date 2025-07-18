@@ -6,6 +6,7 @@ public class PlayerCombatController : MonoBehaviour
     public TriggerController playerAttackBox;
     public InputManager inputs;
     public PlayerMovementController player;
+    public Animator playerAnim;
 
     [Header("Base Stats")]
     public float playerAttackStr;
@@ -44,6 +45,7 @@ public class PlayerCombatController : MonoBehaviour
     {
         if (Input.GetKeyDown(inputs.dash))
         {
+            playerAnim.Play("Running");
             Vector3 inputDir = inputs.GetMovementInput().normalized * dashForce;
             Vector3 moveDir = player.playerTransform.forward * inputDir.x + player.playerTransform.right * inputDir.z;
             player.playerRB.AddForce(moveDir, ForceMode.Impulse);
